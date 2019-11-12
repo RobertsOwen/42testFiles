@@ -6,7 +6,7 @@
 /*   By: oroberts <oroberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 15:44:16 by oroberts          #+#    #+#             */
-/*   Updated: 2019/11/07 14:40:29 by oroberts         ###   ########.fr       */
+/*   Updated: 2019/11/12 12:47:57 by oroberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 int main ()
 {
-	void *test = malloc (42);
+	void *test = (void *)140367269735040;
 
 	void **tests = malloc(sizeof(void *) * 4);
 	for (int i = 0; i < 4; i++)
@@ -30,7 +30,7 @@ int main ()
 
 	int printed;
 	
-	/*t_flags def;
+	t_flags def;
 	t_flags space;
 	ft_freset(&space);
 	space.space = 10;
@@ -38,7 +38,7 @@ int main ()
 	ft_freset(&dot);
 	dot.dot = 10;
 	ft_freset(&def);
-	
+	/*
 	printf("int\t\t: %%d: %d\n", 42);
 	printf("string\t\t: %%s: %s\n", "42 4 EVA");
 	printf("char\t\t: %%c: %c\n", 'A');					//int
@@ -135,7 +135,7 @@ int main ()
 	printf("\t04x: \"%04x\"\n", 300);
 	printf("\t05.4x: \"%05.4x\"\n", 300);
 	printf("\t-5.4x: \"%-5.4x\"\n", 300);
-
+*/
 	ft_putstr_flags("\n\n\n\n\t\t\t\ttest\n\n\n", def);
 
 	ft_putstr_flags("\nint:\n", def);
@@ -260,7 +260,7 @@ int main ()
 
 
 
-*/
+
 	printed = ft_printf("voici le dernier test.\n\
 ce dernier a pour vocation de tester TOUT les fontionnements de ft_printf.\n\
 Le resultat sera comparee a la vraie fonction printf\n\
@@ -661,8 +661,18 @@ tests[0], tests[1], tests[2], tests[3], NULL, NULL);
 
 	for (int i = 0; i < 4; i++)
 		free(tests[i]);
-	free(test);
 
+	printf("                            ,\n\
+                          _/((\n\
+                 _.---. .'   `\\  (QUACK)\n\
+               .'      `     ^ \\ \n\
+              /     \\       .--'\n\
+             |      /       )'-.\n\
+             ; ,   <__..-(   '-.)\n\
+              \\ \\-.__)    ``--._)\n\
+               '.'-.__.-.\n\
+                 '-...-'\n");
+	
 	return (0);
 }
 
