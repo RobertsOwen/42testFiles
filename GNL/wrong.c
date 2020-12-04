@@ -6,7 +6,7 @@
 /*   By: oroberts <oroberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 09:32:16 by oroberts          #+#    #+#             */
-/*   Updated: 2020/12/02 09:41:25 by oroberts         ###   ########.fr       */
+/*   Updated: 2020/12/04 16:30:43 by oroberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main()
 	ret = get_next_line(-1, &ptr);
 	if (ret != -1)
 	{
-		printf("ERROR\n")
+		printf("ERROR\n");
 		return (1);
 	}
 	printf("ok\n");
@@ -31,7 +31,7 @@ int main()
 	ret = get_next_line(5, &ptr);
 	if (ret != -1)
 	{
-		printf("ERROR\n")
+		printf("ERROR\n");
 		return (1);
 	}
 	printf("ok");

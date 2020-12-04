@@ -6,13 +6,16 @@
 /*   By: oroberts <oroberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 13:44:55 by hbaudet           #+#    #+#             */
-/*   Updated: 2019/10/30 12:29:12 by oroberts         ###   ########.fr       */
+/*   Updated: 2020/12/04 16:30:45 by oroberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 //#include "get_next_line_bonus.h"
 #include "get_next_line.h"
+#include <stdlib.h>
+#include <unistd.h>
+
 #include <string.h>
 #include <fcntl.h>
 
