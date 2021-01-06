@@ -6,7 +6,7 @@
 /*   By: oroberts <oroberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 13:44:55 by hbaudet           #+#    #+#             */
-/*   Updated: 2020/12/04 16:30:45 by oroberts         ###   ########.fr       */
+/*   Updated: 2021/01/06 09:52:59 by oroberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 int    main(int ac, char *av[])
 {
-    char    bis[] = "this is a string";
+//    char    bis[] = "this is a string";
     char    *line;
     int        fd[ac + 1];
     int        i;
@@ -31,25 +31,30 @@ int    main(int ac, char *av[])
     
     j = 1;
     i = 1;
-    if (!(line = malloc(sizeof(char) * 18)))
-        return (-1);
+    //if (!(line = malloc(sizeof(char) * 18)))
+    //    return (-1);
     ptr = &line;
-    line = strncpy(line, bis, 17);
-    if (ac == 1)
+    //line = strncpy(line, bis, 17);
+    /*if (ac == 1)
     {
         while ((gnl = (get_next_line(0, ptr))) == 1)
             printf("%s\n", line);
         printf("d%s", line);
-    }
-    else if (ac == 2)
+    }*/
+    if (ac == 2)
     {
+		//fprintf(stderr, "file:%s\n", av[1]);
         if (!(fd[i] = open(av[i], O_RDONLY)))
             return (-1);
         while ((gnl = (get_next_line(fd[i], ptr))) == 1)
-            printf("%s\n", line);
+		{
+			printf("%s\n", line);
+			free(line);
+			line = NULL;
+		}
         printf("%s", line);
     }
-    else
+	else
     {
         while (i < ac)
         {
@@ -83,6 +88,6 @@ int    main(int ac, char *av[])
         }
         free(line);
     }
-    //printf("\n             /|_\n            /  ,\\     \n         .-'   _,'  < QUACK!\n        / _   |\n       /   )_ |\n   ,=='`.____)_)\n\t\t\t\t\t\t\t\t\tgithub/hbaudet\n");
+    //fprintf(stderr, "\n             /|_\n            /  ,\\     \n         .-'   _,'  < QUACK!\n        / _   |\n       /   )_ |\n   ,=='`.____)_)\n\t\t\t\t\t\t\t\t\tgithub/hbaudet\n");
     return (0);
 }
