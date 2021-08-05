@@ -6,7 +6,7 @@
 /*   By: oroberts <oroberts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 13:44:55 by hbaudet           #+#    #+#             */
-/*   Updated: 2021/01/06 09:52:59 by oroberts         ###   ########.fr       */
+/*   Updated: 2021/08/05 17:23:54 by oroberts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,15 @@ int    main(int ac, char *av[])
     char    *line;
     int        fd[ac + 1];
     int        i;
-    int        j;
-    int        gnl;
-    char    **ptr;
+    // int        j;
+    // int        gnl;
+    //char    **ptr;
     
-    j = 1;
+    // j = 1;
     i = 1;
     //if (!(line = malloc(sizeof(char) * 18)))
     //    return (-1);
-    ptr = &line;
+   // ptr = &line;
     //line = strncpy(line, bis, 17);
     /*if (ac == 1)
     {
@@ -46,16 +46,17 @@ int    main(int ac, char *av[])
 		//fprintf(stderr, "file:%s\n", av[1]);
         if (!(fd[i] = open(av[i], O_RDONLY)))
             return (-1);
-        while ((gnl = (get_next_line(fd[i], ptr))) == 1)
+        while ((line = (get_next_line(fd[i]))) != NULL)
 		{
-			printf("%s\n", line);
+			printf("%s", line);
 			free(line);
 			line = NULL;
 		}
-        printf("%s", line);
+        // printf("%s", line);
     }
 	else
     {
+        /*
         while (i < ac)
         {
             if (!(fd[i] = open(av[i], O_RDONLY)))
@@ -68,7 +69,7 @@ int    main(int ac, char *av[])
             i = 1;
             while (i < ac)
             {
-                gnl = get_next_line(fd[i], &line);
+                line = get_next_line(fd[i]);
                 printf("%s\n", line);
                 i++;
             }
@@ -79,14 +80,14 @@ int    main(int ac, char *av[])
         while (i < ac)
         {
             printf("End of %s\n", av[i]);
-            while ((gnl = (get_next_line(fd[i], ptr))))
+            while ((line = (get_next_line(fd[i]))))
                 printf("%s\n", line);
             printf("%s", line);
             close(fd[i]);
             i++;
             //printf("-------------\n\n");
         }
-        free(line);
+        free(line);*/
     }
     //fprintf(stderr, "\n             /|_\n            /  ,\\     \n         .-'   _,'  < QUACK!\n        / _   |\n       /   )_ |\n   ,=='`.____)_)\n\t\t\t\t\t\t\t\t\tgithub/hbaudet\n");
     return (0);
